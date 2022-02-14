@@ -8,7 +8,7 @@
 
     <!-- 합쳐지고 최소화된 최신 CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
     <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <style>
@@ -20,6 +20,13 @@
             transform: translateX(-50%);
             margin-top: 30px;
         }
+        .title{
+            width: 100%;
+            height: auto;
+            line-height: 2;
+            font-weight: 600;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -28,15 +35,20 @@
         <div class="btn-group" role="group" aria-label="Basic example">
             <button type="button" onclick="camera()" class="btn btn-primary">제품 입고하기</button>
         </div>
+        <p class="title"></p>
     </div>
 </body>
 <script>
     function camera() {
-        alert('안드로이드 카메라 화면으로 가기');  
-        JavaScriptChannel.postMessage("camera");
+        $('.title').text('안드로이드 카메라 화면으로 가기');
+        setTimeout(function(){
+            JavaScriptChannel.postMessage("camera");
+        },1000)
     }
     function fromFlutter(newTitle){
-        alert(newTitle);
-        location.href="swith.html";
+        $('.title').text(newTitle);
+        setTimeout(function(){
+            location.href="swith.html";    
+        },1000)
     }
 </script></html>
