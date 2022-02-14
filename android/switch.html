@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+	<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+        .center {
+            width: auto;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" onclick="camera()" class="btn btn-primary">제품 입고하기</button>
+        </div>
+    </div>
+</body>
+<script>
+    function camera() {
+        alert('안드로이드 카메라 화면으로 가기');  
+        JavaScriptChannel.postMessage("camera");
+    }
+    function fromFlutter(newTitle) {
+        location.href="swith.html";
+    }
+</script></html>
