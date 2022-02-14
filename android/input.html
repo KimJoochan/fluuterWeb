@@ -23,9 +23,11 @@
         }
     </style>
     <script>
-        var search=location.search.replace('?','').split('=');
-        $('#exampleFormControlInput1').val(search[1]);
-        $('.title').text(search[1]);
+        $(function(){
+            var search=location.search.replace('?','').split('=');
+            $('#exampleFormControlInput1').val(search[1]);
+            $('.title').text(location.search);    
+        })
     </script>
 </head>
 
